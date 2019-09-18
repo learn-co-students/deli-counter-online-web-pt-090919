@@ -23,10 +23,9 @@ end
 
 def now_serving(array)
   next_up = array.shift
-  while array.size >= 1 
+  if array.size == 0 
+      puts "There is nobody waiting to be served!"
+  else
       puts "Currently serving #{next_up}."
     end
-    if array.size == 0 
-      puts "There is nobody waiting to be served!"
-  end
 end
