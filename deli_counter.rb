@@ -1,12 +1,13 @@
 def line(array)
   if array == []
-  puts "The line is currently empty."
+    puts "The line is currently empty."
  elsif phrase = "The line is currently:"
-  array.each_with_index do |name, index|
-  phrase = phrase + " #{index + 1}. #{name}"
+   array.each_with_index do |name, index|
+      phrase = phrase + " #{index + 1}. #{name}"
+    end
+    puts phrase
   end
-  end
-  puts phrase
+
 end
 
 def take_a_number(array, name)
@@ -18,10 +19,7 @@ def now_serving(array)
   if array == []
     puts "There is nobody waiting to be served!"
   else
-    array.each do |name|
-
-     puts "Currently serving #{name}."
-    array.shift
-   end
+      puts "Currently serving #{array.first}."
+      array.shift
   end
 end
