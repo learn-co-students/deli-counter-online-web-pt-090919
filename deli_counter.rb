@@ -1,16 +1,24 @@
+katz_deli = []
+
 def line(katz_deli)
-  katz_deli = []
-  if katz_deli == 0 
+  place_in_line = [];
+  if katz_deli.empty?
     puts "The line is currently empty."
+  else
+    number = 1
+    katz_deli.each do |customer|
+      place_in_line << "#{number}. #{customer}"
+      number += 1
+    end
+    puts "The line is currently: #{place_in_line.join(" ")}"
   end
 end
 
 
 
-def take_a_number(Katz_deli, name)
-  katz_deli.push(name)
-  Katz_deli.each_with_index do |Katz_deli, index|
-    puts "Welcome, #{Katz_deli}. You are number #{index+1} in line"
+def take_a_number(katz_deli, name)
+    katz_deli << name
+    puts "Welcome, #{name}. You are number #{katz_deli.size} in line."
 end
 
 def now_serving(array)
